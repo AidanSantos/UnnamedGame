@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
@@ -108,5 +107,11 @@ public class PlayerController : MonoBehaviour
 
     public void UnlockMovement() {
         canMove = true;
+    }
+
+    void OnDodge() {
+        animator.SetTrigger("dodgeRoll");
+        float slidingSpeed = 1000f;
+        transform.position += new Vector3(1,0) * slidingSpeed * Time.deltaTime;
     }
 }
