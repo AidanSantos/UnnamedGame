@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2315890776880509874}
   - component: {fileID: 6056076325246223572}
-  - component: {fileID: 5209951986805575773}
+  - component: {fileID: 9148883008335214596}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5651234839084600219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -78,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0449926, y: 2.4138057}
   m_EdgeRadius: 0
---- !u!114 &5209951986805575773
+--- !u!114 &9148883008335214596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,10 +87,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5651234839084600219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a88913e4ddac64ba8c0b0205c7653e, type: 3}
+  m_Script: {fileID: 11500000, guid: 01009fae9b3b7e6439477d5707c6047a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDirection: 0
+  swordCollider: {fileID: 6056076325246223572}
+  damage: 3
 --- !u!1 &7401786308644793799
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,10 +103,11 @@ GameObject:
   - component: {fileID: 8474791723851858104}
   - component: {fileID: 6186119436435437881}
   - component: {fileID: 2706276312330922159}
-  - component: {fileID: 6121653677612908005}
   - component: {fileID: 6448298601625545743}
   - component: {fileID: 2947384194498544661}
   - component: {fileID: 9197229379931624095}
+  - component: {fileID: 7276669449393884161}
+  - component: {fileID: 1359575766338456062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -122,12 +124,12 @@ Transform:
   m_GameObject: {fileID: 7401786308644793799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.41551638, y: 0.41551638, z: 0.41551638}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2315890776880509874}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6186119436435437881
 SpriteRenderer:
@@ -193,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: 0c77fee483edd0749a0171fe18bccd90, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -208,38 +210,9 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6121653677612908005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7401786308644793799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8b1964230978043a84a972cfc38a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  collisionOffset: 0.01
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  swordAttack: {fileID: 5209951986805575773}
 --- !u!50 &6448298601625545743
 Rigidbody2D:
   serializedVersion: 4
@@ -299,18 +272,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03504008, y: -2.072508}
+  m_Offset: {x: 0.021541864, y: -1.8905729}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.8, y: 5.4}
+    oldSize: {x: 5.88, y: 5.4}
     newSize: {x: 0.17, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.483971, y: 0.9102206}
+  m_Size: {x: 2.0314646, y: 1.267122}
   m_EdgeRadius: 0
 --- !u!95 &9197229379931624095
 Animator:
@@ -333,3 +306,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7276669449393884161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401786308644793799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959e030838b24c34ba38d7761431bd7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  collisionOffset: 0
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  swordAttack: {fileID: 9148883008335214596}
+  canMove: 1
+--- !u!114 &1359575766338456062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401786308644793799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0a7e27b45fefe4aa192dd3e98ffb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 9
+  currentHealth: 7
+  anim: {fileID: 9197229379931624095}
