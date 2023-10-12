@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Game_Manager
+  - Grass
   layers:
   - Default
   - TransparentFX

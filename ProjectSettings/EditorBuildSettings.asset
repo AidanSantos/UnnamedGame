@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mohglink Mausoleum.unity
     guid: 0d98745c341690448b1b5135d71e52a2
+  - enabled: 1
+    path: Assets/Scenes/Mohg.unity
+    guid: 007c12bec3719b24fb2c56c1b8701cda
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9c786e3d5652f864790e8d82ca8684e1, type: 2}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
 
-    public static SceneController instance;
+    /*public static SceneController instance;
 
     private void Awake(){
         if (instance == null){
@@ -16,6 +16,7 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    */
 
     // Start is called before the first frame update
     void Start()
