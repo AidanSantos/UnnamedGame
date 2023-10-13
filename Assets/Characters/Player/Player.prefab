@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2315890776880509874}
   - component: {fileID: 6056076325246223572}
   - component: {fileID: 9148883008335214596}
+  - component: {fileID: 646731683282759162}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -92,6 +93,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordCollider: {fileID: 6056076325246223572}
   damage: 3
+--- !u!114 &646731683282759162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651234839084600219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01009fae9b3b7e6439477d5707c6047a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordCollider: {fileID: 6056076325246223572}
+  damage: 3
 --- !u!1 &7401786308644793799
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +123,8 @@ GameObject:
   - component: {fileID: 9197229379931624095}
   - component: {fileID: 7276669449393884161}
   - component: {fileID: 1359575766338456062}
+  - component: {fileID: 454796010980182669}
+  - component: {fileID: 8958901438857758756}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -350,4 +367,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 9
   currentHealth: 7
+  anim: {fileID: 9197229379931624095}
+--- !u!114 &454796010980182669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401786308644793799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959e030838b24c34ba38d7761431bd7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  collisionOffset: 0
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  swordAttack: {fileID: 646731683282759162}
+  canMove: 1
+--- !u!114 &8958901438857758756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401786308644793799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0a7e27b45fefe4aa192dd3e98ffb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  currentHealth: 6
   anim: {fileID: 9197229379931624095}
